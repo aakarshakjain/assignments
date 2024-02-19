@@ -7,20 +7,19 @@
     
 </head>
 <body style="font-family: Arial, sans-serif;">
-    <header style="background-color: #333; color: #fff; padding: 20px; display: flex; justify-content: space-between; align-items: center;">
-        <div class="logo">
-            <img src="https://www.mercedesbenzportland.com/wp-content/themes/DealerInspireDealerTheme/images/logo.png">
-            <h1>Car Dealership</h1>
+    <header style="background-color: #333; color: #fff; padding: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+        <div class="logo" style="display: flex; align-items: center;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg" alt="Logo" style="max-width: 100px; height: auto; margin-right: 10px;">
+            <h1 style="margin: 0;">Car Dealership</h1>
         </div>
         <nav>
-            <ul style="list-style: none;">
-                <button style="padding: 10px 20px; margin-right: 10px; background-color: #ff6600; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Home</button>
-                <button style="padding: 10px 20px; margin-right: 10px; background-color: #ff6600; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Inventory</button>
-                <button style="padding: 10px 20px; margin-right: 10px; background-color: #ff6600; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Contact Us</button>
-                
+            <ul style="list-style: none; display: flex; flex-wrap: wrap;">
+                <li><button style="padding: 10px 20px; margin-right: 10px; background-color: #ff6600; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Home</button></li>
+                <li><button style="padding: 10px 20px; margin-right: 10px; background-color: #ff6600; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Inventory</button></li>
+                <li><button style="padding: 10px 20px; margin-right: 10px; background-color: #ff6600; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Contact Us</button></li>
             </ul>
         </nav>
-        <input type="text" class="search-bar" placeholder="Search..." style="margin-left: auto; /* Push to the right */ padding: 5px; border-radius: 5px; border: 1px solid #fff; background-color: transparent; color: #fff;">
+        <input type="text" class="search-bar" placeholder="Search..." style="margin-top: 10px; flex: 1; padding: 5px; border-radius: 5px; border: 1px solid #fff; background-color: transparent; color: #fff;">
     </header>
     
     <section id="product-details" style="padding: 50px 20px; text-align: center;">
@@ -77,19 +76,38 @@
         <h2>Similar Products</h2>
         <div class="product" style="display: inline-block; margin: 0 10px; text-align: center;">
             <p>BMW M4</p>
-            <img src="https://www.cnet.com/a/img/resize/4cf6e57fcf9e0a6352565781f86fbb81d7870829/hub/2018/05/25/c50d7ddb-5a5c-4eb6-8b9d-f9b63ff05813/2018-bmw-m4-1.jpg?auto=webp&fit=crop&height=360&width=640" alt="Similar Product 1" style="max-width: 100%; height: auto;">
+            <img src="https://machineswithsouls.com/wp-content/uploads/2023/11/m4-coupe-2048x1365.jpg" alt="BMW M4" style="max-width: 50%; height: auto;">
             
         </div>
         <div class="product" style="display: inline-block; margin: 0 10px; text-align: center;">
             
             <p>Audi RS7</p>
-            <img src="https://cdn.motor1.com/images/mgl/7ZmbmJ/s1/audi-rs7-by-abt.webp" alt="Similar Product 2" style="max-width: 44%; height: auto;">  
+            <img src="https://cdn.carbuzz.com/gallery-images/1600/1069000/700/1069716.jpg" alt="Audi RS7" style="max-width: 50%; height: auto;">  
         </div>
     </section>
-    <!--
-    <footer style="background-color: #333; color: #fff; text-align: center; padding: 20px; position: fixed; bottom: 0; width: 100%;">
-        <p>&copy; 2024 Online Shop. All rights reserved.</p>
-    </footer>
-    -->
+    
+    <script>
+        window.addEventListener('resize', () => {
+            adjustLayout();
+        });
+
+        function adjustLayout() {
+            const screenWidth = window.innerWidth;
+            const productImages = document.querySelectorAll('.additional-image');
+
+            if (screenWidth <= 600) {
+                productImages.forEach(image => {
+                    image.style.width = '45%';
+                    image.style.margin = '0 2.5% 20px 2.5%';
+                });
+            } else {
+                productImages.forEach(image => {
+                    image.style.width = 'auto';
+                    image.style.margin = '0 10px 20px 0';
+                });
+            }
+        }
+        adjustLayout();
+    </script>
 </body>
 </html>
